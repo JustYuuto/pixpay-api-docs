@@ -488,3 +488,85 @@ exemple de réponse :
   }
 }
 ```
+
+### Récupérer les infos de la cb
+
+En fait vous avez les infos de votre cb mais aussi des autres membres de la famille, me demandez pas pourquoi, je sais pas
+
+requête :
+```json
+{
+  "operationName": null,
+  "variables": {
+    "lastSynchroDate": null,
+    "includeRenewalCards": true,
+    "includeVirtual": true,
+    "includeDeleted": false
+  },
+  "query": "query SynchroCards($lastSynchroDate: Date, $includeRenewalCards: Boolean, $includeVirtual: Boolean, $includeDeleted: Boolean) {\n  __typename\n  synchroCards(lastSynchroDate: $lastSynchroDate, includeRenewalCards: $includeRenewalCards, includeVirtual: $includeVirtual, includeDeleted: $includeDeleted) {\n    __typename\n    date\n    cards {\n      __typename\n      id\n      embossedName\n      expiryMonth\n      expiryYear\n      statusCode\n      creationStatus\n      maskedPan\n      childHolderId\n      isLive\n      limitAtmEnabled\n      limitAtmPeriodicity\n      limitAtmAmount\n      limitPaymentEnabled\n      limitPaymentPeriodicity\n      limitPaymentAmount\n      isBlocked\n      isBlockedByParent\n      isBlockedByOperator\n      totalAtmWeek\n      totalAtmMonth\n      totalPaymentWeek\n      totalPaymentMonth\n      pinLocked\n      optionAtm\n      optionForeign\n      optionOnline\n      optionNfc\n      deliveryBatchDate\n      cardPrint\n      parentOnboardingFinished\n      childOnboardingFinished\n      authorizedColors\n      approxDeliveryDate\n      latitude\n      longitude\n      displayDeliveryDate\n      displayPinChosenDate\n      isDigitalizable\n      isRenewalCard\n      isDeleted\n      isVirtual\n      tailorMadeCardId\n      tailorMadeCardValidationStatus\n      tenantId\n      trackingId\n    }\n  }\n}"
+}
+```
+
+exemple de réponse :
+```json
+{
+  "data": {
+    "__typename": "Query",
+    "synchroCards": {
+      "__typename": "CardsSynchro",
+      "date": "2000-00-00T00:00:00.000Z",
+      "cards": [
+        {
+          "__typename": "Card",
+          "id": "...",
+          "embossedName": "... nom prénom",
+          "expiryMonth": "00",
+          "expiryYear": "2000",
+          "statusCode": "UNLOCK",
+          "creationStatus": 4,
+          "maskedPan": "000000******0000",
+          "childHolderId": "...",
+          "isLive": "1",
+          "limitAtmEnabled": null,
+          "limitAtmPeriodicity": "MONTHLY",
+          "limitAtmAmount": 00,
+          "limitPaymentEnabled": null,
+          "limitPaymentPeriodicity": "WEEKLY",
+          "limitPaymentAmount": 00,
+          "isBlocked": false,
+          "isBlockedByParent": false,
+          "isBlockedByOperator": false,
+          "totalAtmWeek": 0,
+          "totalAtmMonth": 0,
+          "totalPaymentWeek": 00.08,
+          "totalPaymentMonth": 00.02,
+          "pinLocked": false,
+          "optionAtm": true,
+          "optionForeign": true,
+          "optionOnline": true,
+          "optionNfc": true,
+          "deliveryBatchDate": "2000-00-00",
+          "cardPrint": "BLUE",
+          "parentOnboardingFinished": true,
+          "childOnboardingFinished": true,
+          "authorizedColors": [],
+          "approxDeliveryDate": "2000-00-00T00:00:00.000Z",
+          "latitude": 0.00000,
+          "longitude": 0.00000,
+          "displayDeliveryDate": "2000-00-00T00:00:00.000Z",
+          "displayPinChosenDate": "2000-00-00T00:00:00.000Z",
+          "isDigitalizable": true,
+          "isRenewalCard": false,
+          "isDeleted": false,
+          "isVirtual": false,
+          "tailorMadeCardId": null,
+          "tailorMadeCardValidationStatus": null,
+          "tenantId": "...",
+          "trackingId": null
+        },
+        // ...
+      ]
+    }
+  }
+}
+```
