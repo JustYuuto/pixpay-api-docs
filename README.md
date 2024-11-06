@@ -232,3 +232,213 @@ exemple de réponse :
   }
 }
 ```
+
+### Récupérer le timestamp serveur
+
+`GET https://prod-bo1.pixpay.app/timestamp`
+
+```json
+{
+  "timestamp": "2024-11-06T18:50:17.385Z"
+}
+```
+
+### Récupérer les perms d'un enfant par son ID
+
+requête :
+```json
+{
+  "operationName": null,
+  "variables": {
+    "childId": "..."
+  },
+  "query": "query findPermissionsByChildId($childId: String!) {\n  __typename\n  findPermissionsByChildId(childId: $childId) {\n    __typename\n    feature\n    isAllowed\n  }\n}"
+}
+```
+
+exemple de réponse : 
+```json
+{
+  "data": {
+    "__typename": "Query",
+    "findPermissionsByChildId": [
+      {
+        "__typename": "PlanPermission",
+        "feature": "virtual_card",
+        "isAllowed": false
+      },
+      {
+        "__typename": "PlanPermission",
+        "feature": "vip_support",
+        "isAllowed": false
+      },
+      {
+        "__typename": "PlanPermission",
+        "feature": "travel",
+        "isAllowed": false
+      },
+      {
+        "__typename": "PlanPermission",
+        "feature": "insurance_ultimate",
+        "isAllowed": false
+      },
+      {
+        "__typename": "PlanPermission",
+        "feature": "cashback_v_two",
+        "isAllowed": false
+      },
+      {
+        "__typename": "PlanPermission",
+        "feature": "free_abroad_card_transaction",
+        "isAllowed": false
+      },
+      {
+        "__typename": "PlanPermission",
+        "feature": "free_card_reorder",
+        "isAllowed": false
+      },
+      {
+        "__typename": "PlanPermission",
+        "feature": "tailor_made",
+        "isAllowed": false
+      },
+      {
+        "__typename": "PlanPermission",
+        "feature": "loan",
+        "isAllowed": true
+      },
+      {
+        "__typename": "PlanPermission",
+        "feature": "free_withdrawal",
+        "isAllowed": true
+      },
+      {
+        "__typename": "PlanPermission",
+        "feature": "custom_app",
+        "isAllowed": true
+      },
+      {
+        "__typename": "PlanPermission",
+        "feature": "insurrance",
+        "isAllowed": false
+      },
+      {
+        "__typename": "PlanPermission",
+        "feature": "carbon_footprint",
+        "isAllowed": true
+      },
+      {
+        "__typename": "PlanPermission",
+        "feature": "custom_card",
+        "isAllowed": false
+      },
+      {
+        "__typename": "PlanPermission",
+        "feature": "missions",
+        "isAllowed": true
+      },
+      {
+        "__typename": "PlanPermission",
+        "feature": "projects",
+        "isAllowed": true
+      },
+      {
+        "__typename": "PlanPermission",
+        "feature": "vault",
+        "isAllowed": true
+      }
+    ]
+  }
+}
+```
+
+### Récupérer les "wallets"
+
+requête :
+```json
+{
+  "operationName": null,
+  "variables": {
+    "lastSynchroDate": null
+  },
+  "query": "query SynchroWallets($lastSynchroDate: Date) {\n  __typename\n  synchroWallets(lastSynchroDate: $lastSynchroDate) {\n    __typename\n    wallets {\n      __typename\n      id\n      balance\n      currency\n      authorizedBalance\n      authorizedDisplayed\n      nextBalance\n      isMain\n      isSaving\n      isCashback\n      isTravel\n      name\n      childUserId\n      createdDate\n      iban\n      bic\n      isDeleted\n      externalId\n      updatedDate\n    }\n    date\n  }\n}"
+}
+```
+
+exemple de réponse :
+```json
+{
+  "data": {
+    "__typename": "Query",
+    "synchroWallets": {
+      "__typename": "WalletsSynchro",
+      "wallets": [
+        {
+          "__typename": "Wallet",
+          "id": "....",
+          "balance": 0,
+          "currency": "EUR",
+          "authorizedBalance": 0,
+          "authorizedDisplayed": null,
+          "nextBalance": 0,
+          "isMain": false,
+          "isSaving": false,
+          "isCashback": true,
+          "isTravel": false,
+          "name": "[Cashback] : ......",
+          "childUserId": "....",
+          "createdDate": "2000-00-00T00:00:00.000Z",
+          "iban": null,
+          "bic": null,
+          "isDeleted": false,
+          "externalId": "...",
+          "updatedDate": "2000-00-00T00:00:00.000Z"
+        },
+        { // ce wallet est la cb
+          "__typename": "Wallet",
+          "id": "......",
+          "balance": 12.71, // oui en effet c'est la hess
+          "currency": "EUR",
+          "authorizedBalance": 12.71,
+          "authorizedDisplayed": null,
+          "nextBalance": 0,
+          "isMain": true,
+          "isSaving": false,
+          "isCashback": false,
+          "isTravel": false,
+          "name": "[Child Checking] ....",
+          "childUserId": "....",
+          "createdDate": "2000-00-00T00:00:00.000Z",
+          "iban": "iban du compte bancaire",
+          "bic": "bic du compte bancaire",
+          "isDeleted": false,
+          "externalId": "...",
+          "updatedDate": "2000-00-00T00:00:00.000Z"
+        },
+        { // ce wallet est le coffre fort je crois
+          "__typename": "Wallet",
+          "id": "......",
+          "balance": 0,
+          "currency": "EUR",
+          "authorizedBalance": 0,
+          "authorizedDisplayed": null,
+          "nextBalance": 0,
+          "isMain": true,
+          "isSaving": true,
+          "isCashback": false,
+          "isTravel": false,
+          "name": "[Child Vault] : .......",
+          "childUserId": "...",
+          "createdDate": "2000-00-00T00:00:00.000Z",
+          "iban": null,
+          "bic": null,
+          "isDeleted": false,
+          "externalId": "000000000",
+          "updatedDate": "2000-00-00T00:00:00.000Z"
+        }
+      ],
+      "date": "2000-00-00T00:00:00.000Z"
+    }
+  }
+}
+```
