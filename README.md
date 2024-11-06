@@ -456,6 +456,29 @@ requête :
 
 réponse : voir [Récupérer les "wallets"](#récupérer-les-wallets)
 
+### Récupérer le wallet du parent
+
+requête :
+```json
+{
+  "operationName": null,
+  "variables": {},
+  "query": "query getParentWallet {\n  __typename\n  getParentWallet {\n    __typename\n    id\n    balance\n    currency\n    authorizedBalance\n    authorizedDisplayed\n    nextBalance\n    isMain\n    isSaving\n    isCashback\n    name\n    childUserId\n    createdDate\n    iban\n    bic\n    isDeleted\n    externalId\n    updatedDate\n  }\n}"
+}
+```
+
+exemple de réponse :
+```json
+{
+  "data": {
+    "__typename": "Query",
+    "getParentWallet": {
+      // référrez vous à la section au-dessus x2
+    }
+  }
+}
+```
+
 ### Argent chaque semaine/mois
 
 requête :
@@ -625,6 +648,29 @@ exemple de réponse :
   "data": {
     "__typename": "Query",
     "findInappNotification": []
+  }
+}
+```
+
+### Savoir si la carte est digitale
+
+requête :
+```json
+{
+  "operationName": null,
+  "variables": {
+    "cardId": "..."
+  },
+  "query": "query isCardDigitalized($cardId: ID!) {\n  __typename\n  isCardDigitalized(cardId: $cardId)\n}"
+}
+```
+
+réponse :
+```json
+{
+  "data": {
+    "__typename": "Query",
+    "isCardDigitalized": true // ou false si c'est pas le cas
   }
 }
 ```
