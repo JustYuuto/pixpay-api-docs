@@ -442,3 +442,16 @@ exemple de réponse :
   }
 }
 ```
+
+### Récupérer les "wallets" (des autres enfants de la famille)
+
+requête : 
+```json
+{
+  "operationName": null,
+  "variables": {},
+  "query": "query getSiblingWallet {\n  __typename\n  getSiblingWallet {\n    __typename\n    id\n    balance\n    currency\n    authorizedBalance\n    authorizedDisplayed\n    nextBalance\n    isMain\n    isSaving\n    isCashback\n    name\n    childUserId\n    createdDate\n    iban\n    bic\n    isDeleted\n    externalId\n    updatedDate\n  }\n}"
+}
+```
+
+réponse : voir [Récupérer les "wallets"](#récupérer-les-wallets)
