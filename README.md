@@ -570,3 +570,61 @@ exemple de réponse :
   }
 }
 ```
+
+### Mettre à jour les infos de l'appareil
+
+exemple de requête :
+```json
+{
+  "operationName": null,
+  "variables": {
+    "input": {
+      "uuid": "...",
+      "id": null,
+      "pushToken": null,
+      "manufacturer": "Microsoft Corporation",
+      "model": "Subsystem for Android(TM)",
+      "os": "Android",
+      "osVersion": "13",
+      "sdkVersion": "33",
+      "language": "en_US",
+      "region": null,
+      "pushActivated": null,
+      "pushDesactivatedInSystem": null,
+      "applicationVersion": "5.87.15"
+    }
+  },
+  "query": "mutation updateDevice($input: DeviceInput!) {\n  __typename\n  updateDevice(device: $input) {\n    __typename\n    id\n  }\n}"
+}
+```
+
+réponse : 
+```json
+{
+  "data": {
+    "__typename": "Mutation",
+    "updateDevice": null
+  }
+}
+```
+
+### Récupérer les notifications in-app
+
+requête :
+```json
+{
+  "operationName": null,
+  "variables": {},
+  "query": "query findInappNotification {\n  __typename\n  findInappNotification {\n    __typename\n    id\n    title\n    description\n    linkTarget\n    linkLabel\n    modalId\n    ctaTitle\n    emoji\n    storyId\n    type\n    readDate\n    createdDate\n  }\n}"
+}
+```
+
+exemple de réponse :
+```json
+{
+  "data": {
+    "__typename": "Query",
+    "findInappNotification": []
+  }
+}
+```
