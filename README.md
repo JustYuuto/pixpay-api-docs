@@ -455,3 +455,36 @@ requête :
 ```
 
 réponse : voir [Récupérer les "wallets"](#récupérer-les-wallets)
+
+### Argent chaque semaine/mois
+
+requête :
+```json
+{
+  "operationName": null,
+  "variables": {
+    "childId": "..."
+  },
+  "query": "query getAllowance($childId: ID!) {\n  __typename\n  getAllowance(childId: $childId) {\n    __typename\n    id\n    childId\n    amount\n    periodicity\n    periodicityDay\n    isSuspended\n    nextDistributionAmount\n    nextDistributionDate\n  }\n}"
+}
+```
+
+exemple de réponse : 
+```json
+{
+  "data": {
+    "__typename": "Query",
+    "getAllowance": {
+      "__typename": "Allowance",
+      "id": "...",
+      "childId": "...",
+      "amount": 30,
+      "periodicity": "MONTHLY",
+      "periodicityDay": 1,
+      "isSuspended": false,
+      "nextDistributionAmount": 30,
+      "nextDistributionDate": "2000-00-00T00:00:00.000Z"
+    }
+  }
+}
+```
