@@ -676,3 +676,33 @@ réponse :
   }
 }
 ```
+
+## Fichiers du bucket S3
+
+Cette section indexe juste les urls du bucket Amazon S3 utilisé par Pixpay, n"anmoins j'ai la flemme (pour le moment de documenter chaque URL)
+
+* https://pixpay-public.s3.eu-west-3.amazonaws.com/content/prod/fr-fr/collections.json
+* https://pixpay-public.s3.eu-west-3.amazonaws.com/content/prod/fr-fr/marketing_communication/content.json
+* https://pixpay-public.s3.eu-west-3.amazonaws.com/content/prod/fr-fr/plan/content.json
+* https://pixpay-public.s3.eu-west-3.amazonaws.com/content/prod/fr-fr/share_template/content.json
+* https://pixpay-public.s3.eu-west-3.amazonaws.com/content/prod/fr-fr/background_wallet/content.json
+* https://pixpay-public.s3.eu-west-3.amazonaws.com/content/prod/fr-fr/pixpay_go/content.json
+* https://pixpay-public.s3.eu-west-3.amazonaws.com/content/prod/fr-fr/association/content.json
+* https://pixpay-public.s3.eu-west-3.amazonaws.com/content/prod/fr-fr/broker_coach/content.json
+* https://pixpay-public.s3.eu-west-3.amazonaws.com/content/prod/fr-fr/news/content.json
+* https://pixpay-public.s3.eu-west-3.amazonaws.com/content/prod/fr-fr/bloc_feature/content.json
+* https://pixpay-public.s3.eu-west-3.amazonaws.com/content/prod/fr-fr/child_task/content.json
+* https://pixpay-public.s3.eu-west-3.amazonaws.com/content/prod/fr-fr/insurance/content.json
+* https://pixpay-public.s3.eu-west-3.amazonaws.com/content/prod/fr-fr/advantage-marketing-news/content.json
+* https://pixpay-public.s3.eu-west-3.amazonaws.com/content/prod/fr-fr/gift/content.json
+* https://pixpay-public.s3.eu-west-3.amazonaws.com/content/prod/fr-fr/parent_offer_offers/content.json
+* https://pixpay-public.s3.eu-west-3.amazonaws.com/content/prod/fr-fr/parent_offer_services/content.json
+* https://pixpay-public.s3.eu-west-3.amazonaws.com/content/prod/fr-fr/hub/content.json
+* https://pixpay-public.s3.eu-west-3.amazonaws.com/content/prod/fr-fr/custom_card_preview/content.json
+* https://pixpay-public.s3.eu-west-3.amazonaws.com/content/prod/fr-fr/saving_feature/content.json
+* https://pixpay-public.s3.eu-west-3.amazonaws.com/content/prod/fr-fr/custom_card_category/content.json
+* https://pixpay-public.s3.eu-west-3.amazonaws.com/content/prod/fr-fr/hard_page/content.json
+* https://pixpay-public.s3.eu-west-3.amazonaws.com/content/prod/fr-fr/story/content.json
+* https://pixpay-public.s3.eu-west-3.amazonaws.com/content/prod/fr-fr/pixpay_throwback/content.json
+* https://pixpay-public.s3.eu-west-3.amazonaws.com/content/prod/fr-fr/story/content.json
+* https://pixpay-public.s3.eu-west-3.amazonaws.com/cards/Classic/blue.png
