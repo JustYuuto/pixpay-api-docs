@@ -8,13 +8,15 @@ Cette page répertorie les routes sur l'api interne utilisée au sein de l'appli
   * `Dalvik/2.1.0 (Linux; U; Android 13; Subsystem for Android(TM) Build/TQ3A.230901.001)`
 * bucket amazon s3 : https://pixpay-public.s3.eu-west-3.amazonaws.com/
 
-À part pour s'authentifier toutes les requêtes utilisent GraphQL sur `https://prod-bo1.pixpay.app/graphql` en post.
+> [!TIP]
+> À part pour s'authentifier toutes les requêtes utilisent GraphQL sur `https://prod-bo1.pixpay.app/graphql` en post.
 
 ## Routes
 
 ### Authentification
 
-Attention pour cette section l'api utilise le ndd `prod-auth.pixpay.app`
+> [!NOTE]
+> Attention pour cette section l'api utilise le ndd `prod-auth.pixpay.app`
 
 #### `POST /user/check_login`
 
