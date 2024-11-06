@@ -679,7 +679,7 @@ réponse :
 
 ## Fichiers du bucket S3
 
-Cette section indexe juste les urls du bucket Amazon S3 utilisé par Pixpay, n"anmoins j'ai la flemme (pour le moment de documenter chaque URL)
+Cette section indexe juste les urls du bucket Amazon S3 utilisé par Pixpay, néanmoins j'ai la flemme (pour le moment) de documenter chaque URL
 
 * https://pixpay-public.s3.eu-west-3.amazonaws.com/content/prod/fr-fr/collections.json
 * https://pixpay-public.s3.eu-west-3.amazonaws.com/content/prod/fr-fr/marketing_communication/content.json
